@@ -24,7 +24,7 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
     return pwd_content.verify(plain_password, hashed_password)
 
 
-async def token(data: dict):
+def token(data: dict):
     
     encode_ = data.copy()
     exp = datetime.now(timezone.utc) + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)

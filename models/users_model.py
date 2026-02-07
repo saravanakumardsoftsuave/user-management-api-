@@ -51,6 +51,6 @@ class TodoItem(Base):
     user_id = Column(ForeignKey("users.id"))
     title = Column(String(255))
     description = Column(String(500))
-    is_completed = Column(Integer, default=0)  # 0 for False, 1 for True
+    is_completed = Column(Boolean, default=False)  # 0 for False, 1 for True
 
     user = relationship("User", back_populates="todo_items")
